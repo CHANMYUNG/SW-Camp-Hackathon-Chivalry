@@ -43,6 +43,7 @@
                 android:textStyle="bold"
                 android:text="기사도"/>
         </RelativeLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
