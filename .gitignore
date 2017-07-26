@@ -383,3 +383,7 @@ typings/
 !.vscode/extensions.json
 
 # End of https://www.gitignore.io/api/node,eclipse,android,phpstorm,intellij,androidstudio,visualstudiocode
+
+
+# Nodejs Server Config File
+config.js
