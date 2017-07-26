@@ -3,6 +3,7 @@ package com.example.a10102.myapplication;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,9 +18,6 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    // ListView
-    static final String[] ListMenu = {"301호", "302호", "303호"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +45,24 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // ListView
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ListMenu);
+        ListView listview;
+        ListViewAdapter adapter;
 
-        ListView listview = (ListView) findViewById(R.id.roomlistView);
+        // Adapter 생성
+        adapter = new ListViewAdapter();
+
+        // ListView 참조 및 Adapter 달기
+        listview = (ListView) findViewById(R.id.roomlistView);
         listview.setAdapter(adapter);
 
+        // 첫 번째 아이템 추가
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.greenbroom), "301호", "김가나, 나다라, 도마바");
+
+        // 두 번째 아이템 추가
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.greenbroom), "302호", "류사아, 마자차, 박카타");
+
+        // 세 번째 아이템 추가
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.redbroom), "303호", "송파하, 임거너, 정더러");
 
     }
 
