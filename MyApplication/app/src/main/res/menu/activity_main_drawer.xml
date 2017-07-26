@@ -14,5 +14,10 @@
             android:id="@+id/nav_alarm"
             android:icon="@drawable/alarm"
             android:title="호실 알림" />
+
+        <item
+            android:id="@+id/nav_patrol"
+            android:icon="@drawable/patrol"
+            android:title="순찰 모드" />
     </group>
 </menu>

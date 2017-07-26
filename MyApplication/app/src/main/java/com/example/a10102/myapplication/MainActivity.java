@@ -117,6 +117,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_alarm) {
 
+        } else if (id == R.id.nav_patrol) {
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
