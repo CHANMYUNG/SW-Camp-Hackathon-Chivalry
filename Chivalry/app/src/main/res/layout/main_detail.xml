@@ -44,6 +44,7 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_student_info" />
 
+<<<<<<< HEAD
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -191,6 +192,13 @@
                     </LinearLayout>
 
                 </LinearLayout>
+=======
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="김동규"
+                    android:textColor="black" />
+>>>>>>> c5347a91f60b4d74746fc81a90804cca04e78e79
 
             </RelativeLayout>
         </LinearLayout>
@@ -201,6 +209,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
+<<<<<<< HEAD
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -360,6 +369,13 @@
                 </LinearLayout>
 
             </RelativeLayout>
+=======
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_student_info" />
+>>>>>>> c5347a91f60b4d74746fc81a90804cca04e78e79
 
         </LinearLayout>
 
