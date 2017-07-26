@@ -1,0 +1,28 @@
+{
+  "name": "hackathon-chivalry-server",
+  "version": "1.0.0",
+  "description": "SW-CAMP-HACKATHON-CHIVALRY-SERVER (node.js)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nooheat/Sw-Camp-Hackathon-Chivalry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nooheat/Sw-Camp-Hackathon-Chivalry/issues"
+  },
+  "homepage": "https://github.com/Nooheat/Sw-Camp-Hackathon-Chivalry#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "mongoose": "^4.11.4",
+    "morgan": "^1.8.2",
+    "mysql": "^2.14.0",
+    "nodemon": "^1.11.0"
+  }
+}
