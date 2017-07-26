@@ -22,47 +22,47 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="3"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_centerInParent="true"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_student_info"/>
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_student_info" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="김동규"
-                    android:textColor="black"/>
+                    android:textColor="black" />
 
             </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_student_info"/>
+                android:layout_gravity="center"
+                android:src="@drawable/ic_student_info" />
 
         </LinearLayout>
 
