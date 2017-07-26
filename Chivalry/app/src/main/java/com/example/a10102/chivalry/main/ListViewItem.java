@@ -1,4 +1,4 @@
-package com.example.a10102.chivalry;
+package com.example.a10102.chivalry.main;
 
 
 import android.graphics.drawable.Drawable;
