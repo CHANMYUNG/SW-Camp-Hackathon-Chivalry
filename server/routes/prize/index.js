@@ -1,6 +1,10 @@
 let router = require('express').Router();
 let util = require('../util');
 
+
+router.route('/prize').get(function (req, res) {
+    
+});
 router.route('/prize').put(function (req, res) {
     if (typeof req.body.stuNum === "undefined" || typeof req.body.prize === "undefined") {
         res.status(400).end();
@@ -23,7 +27,7 @@ router.route('/prize').put(function (req, res) {
                 } else {
                     let afterChangePrize = Number(rows[0].prize) + Number(prize);
                     db.query('update student set prize = ? where stuNum = ?', [afterChangePrize, stuNum], function (err, result) {
-                        if(err) reject(500);
+                        if (err) reject(500);
                         if (result.affectedRows === 1) {
                             resolve();
                         } else {
