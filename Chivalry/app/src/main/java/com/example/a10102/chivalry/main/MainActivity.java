@@ -1,25 +1,26 @@
-package com.example.a10102.chivalry;
+package com.example.a10102.chivalry.main;
 
-import android.animation.Animator;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.a10102.chivalry.R;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    boolean bLog = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,16 +77,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -104,4 +95,61 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        Log.d("test", "onPrepareOptionsMenu - 옵션메뉴가 " +
+                "화면에 보여질때 마다 호출됨");
+        if(bLog){ // 로그인 한 상태: 로그인은 안보이게, 로그아웃은 보이게
+            menu.getItem(0).setEnabled(true);
+            menu.getItem(1).setEnabled(false);
+        }else{ // 로그 아웃 한 상태 : 로그인 보이게, 로그아웃은 안보이게
+            menu.getItem(0).setEnabled(false);
+            menu.getItem(1).setEnabled(true);
+        }
+
+        bLog = !bLog;   // 값을 반대로 바꿈
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        // 메뉴버튼이 처음 눌러졌을 때 실행되는 콜백메서드
+        // 메뉴버튼을 눌렀을 때 보여줄 menu 에 대해서 정의
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        Log.d("test", "onCreateOptionsMenu - 최초 메뉴키를 눌렀을 때 호출됨");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // 메뉴의 항목을 선택(클릭)했을 때 호출되는 콜백메서드
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        Log.d("test", "onOptionsItemSelected - 메뉴항목을 클릭했을 때 호출됨");
+
+        int id = item.getItemId();
+
+
+        switch(id) {
+            case R.id.menu_login:
+                Toast.makeText(getApplicationContext(), "3층 메뉴 선택",
+                        Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_logout:
+                Toast.makeText(getApplicationContext(), "4층 메뉴 선택",
+                        Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.menu_a:
+                Toast.makeText(getApplicationContext(), "5층 메뉴 선택",
+                        Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

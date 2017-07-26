@@ -1,4 +1,4 @@
-package com.example.a10102.chivalry;
+package com.example.a10102.chivalry.main;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.a10102.chivalry.R;
 
 import java.util.ArrayList;
 
