@@ -9,7 +9,6 @@ import android.graphics.drawable.Drawable;
 
 public class ListViewItem {
     private Drawable cleanIconDrawable;
-    private Drawable attentionIconDrawable;
     private String roomStr;
     private String memberStr;
 
