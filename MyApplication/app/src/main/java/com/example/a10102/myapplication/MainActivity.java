@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.greenbroom), ContextCompat.getDrawable(this, R.drawable.greenlight), "301호", "김가나, 나다라, 도마바");
 
         // 두 번째 아이템 추가
-        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.greenbroom), ContextCompat.getDrawable(this, R.drawable.yellowlight), "302호", "류사아, 마자차, 박카타");
+        adapter.addItem(ContextCompat.getDrawable(this, R.drawable.greenbroom), ContextCompat.getDrawable(this, R.drawable.redlight), "302호", "류사아, 마자차, 박카타");
 
         // 세 번째 아이템 추가
         adapter.addItem(ContextCompat.getDrawable(this, R.drawable.redbroom), ContextCompat.getDrawable(this, R.drawable.redlight), "303호", "송파하, 임거너, 정더러");
