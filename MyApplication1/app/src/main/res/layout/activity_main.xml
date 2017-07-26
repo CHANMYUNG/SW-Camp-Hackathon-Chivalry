@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.myapplication1.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="50pt"
+            android:text="Name"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:layout_marginLeft="45dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="#000000"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40pt"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="70dp"
+                android:textSize="35sp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="120dp"
+                android:textSize="30sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40pt"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="70dp"
+                android:textSize="35sp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="120dp"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40pt"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:text="text"
+                android:textSize="35sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:text="text"
+                android:textSize="30sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="34dp"
+                android:src="@drawable/bad" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/good" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40pt"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="80dp"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_marginLeft="128dp"
+                android:textSize="30sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
