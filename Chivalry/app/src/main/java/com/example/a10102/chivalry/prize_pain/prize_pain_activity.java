@@ -11,6 +11,8 @@ import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.example.a10102.chivalry.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 /**
@@ -28,15 +30,26 @@ public class prize_pain_activity extends AppCompatActivity {
 
         aq = new AQuery(this);
 
-        TextView name = (TextView) findViewById(R.id.name);
-        TextView stuNum = (TextView) findViewById(R.id.stuNum);
-        TextView prize = (TextView) findViewById(R.id.prize);
-        TextView pain = (TextView) findViewById(R.id.pain);
-        aq.ajax("192.168.1.100:8080/student/20214", String.class, new AjaxCallback<String>() {
+        final TextView name = (TextView) findViewById(R.id.name);
+        final TextView stuNum = (TextView) findViewById(R.id.stuNum);
+        final TextView prize = (TextView) findViewById(R.id.prize);
+        final TextView pain = (TextView) findViewById(R.id.pain);
+
+        int stuNumValue = User.getStuNum();
+
+        aq.ajax("http://13.124.15.202:8080/student/"+stuNumValue, String.class, new AjaxCallback<String>() {
             @Override
             public void callback(String url, String response, AjaxStatus status) {
-                Log.d("result","결과옴");
-                System.out.println(response);
+                try {
+                    JSONObject student = new JSONObject(response);
+
+                    name.setText(student.getString("name"));
+                    stuNum.setText(Integer.toString(student.getInt("stuNum")));
+                    prize.setText(Integer.toString(student.getInt("prize")));
+                    pain.setText(Integer.toString(student.getInt("pain")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
