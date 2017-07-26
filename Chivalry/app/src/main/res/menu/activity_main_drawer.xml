@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/list"
+            android:title="호실 목록" />
+        <item
+            android:id="@+id/nav_good_bad"
+            android:icon="@drawable/good_bad"
+            android:title="상 / 벌점" />
+        <item
+            android:id="@+id/nav_alarm"
+            android:icon="@drawable/alarm"
+            android:title="호실 알림" />
+
+        <item
+            android:id="@+id/nav_patrol"
+            android:icon="@drawable/patrol"
+            android:title="순찰 모드" />
+    </group>
+</menu>
