@@ -112,8 +112,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_list) {
             // Handle the camera action
-        } else if (id == R.id.nav_good_bad) {
-
         } else if (id == R.id.nav_alarm) {
 
         } else if (id == R.id.nav_patrol) {
