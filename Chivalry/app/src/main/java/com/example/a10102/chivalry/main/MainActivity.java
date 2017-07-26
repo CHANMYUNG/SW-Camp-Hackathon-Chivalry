@@ -191,16 +191,16 @@ public class MainActivity extends AppCompatActivity
 
         switch(id) {
             case R.id.menu_login:
-                Toast.makeText(getApplicationContext(), "3층 메뉴 선택",
-                        Toast.LENGTH_SHORT).show();
+                Floor.setFloor(3);
+                this.recreate();
                 return true;
             case R.id.menu_logout:
-                Toast.makeText(getApplicationContext(), "4층 메뉴 선택",
-                        Toast.LENGTH_SHORT).show();
+                Floor.setFloor(4);
+                this.recreate();
                 return true;
             case R.id.menu_a:
-                Toast.makeText(getApplicationContext(), "5층 메뉴 선택",
-                        Toast.LENGTH_SHORT).show();
+                Floor.setFloor(5);
+                this.recreate();
                 return true;
         }
         return super.onOptionsItemSelected(item);
