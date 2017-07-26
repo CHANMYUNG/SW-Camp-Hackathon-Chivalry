@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:text="기사도"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -29,7 +29,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="10dp"
         android:text="기숙사 사감부 도우미 어플리케이션" />
 
 </LinearLayout>
