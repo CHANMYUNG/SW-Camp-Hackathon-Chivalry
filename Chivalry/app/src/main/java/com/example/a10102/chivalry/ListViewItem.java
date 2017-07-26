@@ -16,9 +16,6 @@ public class ListViewItem {
     public void setCleanIcon(Drawable icon) {
         cleanIconDrawable = icon;
     }
-    public void setAttentionIcon(Drawable button) {
-        attentionIconDrawable = button;
-    }
     public void setRoom(String title) {
         roomStr = title;
     }
@@ -28,9 +25,6 @@ public class ListViewItem {
 
     public Drawable getCleanIcon() {
         return this.cleanIconDrawable;
-    }
-    public Drawable getAttentionIcon() {
-        return this.attentionIconDrawable;
     }
     public String getRoom() {
         return this.roomStr;
