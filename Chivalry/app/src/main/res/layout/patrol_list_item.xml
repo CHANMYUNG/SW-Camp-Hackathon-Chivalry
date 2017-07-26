@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView_roomNum_patrol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="301호"
+                    android:textSize="25dp" />
+                <TextView
+                    android:id="@+id/textView_memberList_patrol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="김동규, 윤태훈, 조성륜"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/check"
+                android:layout_marginLeft="20dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/check"/>
+
+            <ImageView
+                android:id="@+id/attention"
+                android:layout_marginLeft="20dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attantion_red"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
