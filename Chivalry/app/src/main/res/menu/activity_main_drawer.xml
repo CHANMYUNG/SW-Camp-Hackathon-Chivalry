@@ -7,10 +7,6 @@
             android:icon="@drawable/list"
             android:title="호실 목록" />
         <item
-            android:id="@+id/nav_good_bad"
-            android:icon="@drawable/good_bad"
-            android:title="상 / 벌점" />
-        <item
             android:id="@+id/nav_alarm"
             android:icon="@drawable/alarm"
             android:title="호실 알림" />
@@ -19,5 +15,6 @@
             android:id="@+id/nav_patrol"
             android:icon="@drawable/patrol"
             android:title="순찰 모드" />
+
     </group>
 </menu>
