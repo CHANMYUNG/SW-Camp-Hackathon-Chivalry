@@ -7,26 +7,34 @@ import android.graphics.drawable.Drawable;
  */
 
 public class ListViewItem {
-    private Drawable iconDrawable;
-    private String titleStr;
-    private String descStr;
+    private Drawable cleanIconDrawable;
+    private Drawable attentionIconDrawable;
+    private String roomStr;
+    private String memberStr;
 
-    public void setIcon(Drawable icon) {
-        iconDrawable = icon;
+    public void setCleanIcon(Drawable icon) {
+        cleanIconDrawable = icon;
     }
-    public void setTitle(String title) {
-        titleStr = title;
+    public void setAttentionIcon(Drawable button) {
+        attentionIconDrawable = button;
     }
-    public void setDesc(String desc) {
-        descStr = desc;
+    public void setRoom(String title) {
+        roomStr = title;
     }
-    public Drawable getIcon() {
-        return this.iconDrawable;
+    public void setMember(String desc) {
+        memberStr = desc;
     }
-    public String getTitle() {
-        return this.titleStr;
+
+    public Drawable getCleanIcon() {
+        return this.cleanIconDrawable;
     }
-    public String getDesc() {
-        return this.descStr;
+    public Drawable getAttentionIcon() {
+        return this.attentionIconDrawable;
+    }
+    public String getRoom() {
+        return this.roomStr;
+    }
+    public String getMember() {
+        return this.memberStr;
     }
 }

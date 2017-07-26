@@ -8,6 +8,10 @@
         android:id="@+id/imageview1"
         android:layout_gravity="end"
         android:layout_weight="1"/>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/button1"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
