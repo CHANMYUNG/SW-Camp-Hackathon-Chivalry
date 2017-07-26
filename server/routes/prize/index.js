@@ -3,7 +3,24 @@ let util = require('../util');
 
 
 router.route('/prize').get(function (req, res) {
-    
+    let db = req.app.get('db');
+    db.query("SELECT * FROM reasonOfPrize", function (err, rows) {
+        if (err) res.status(500).end();
+        let promise = new Promise(function (resolve, reject) {
+            let response = [];
+            for (var i = 0; i < rows.length; i++) {
+                let item = {
+                    "index": rows[i].index,
+                    "title": rows[i].title,
+                    "prize": rows[i].prize
+                }
+                response.push(item);
+            }
+            resolve(response);
+        }).then((response) => {
+            res.status(200).json(response);
+        });
+    })
 });
 router.route('/prize').put(function (req, res) {
     if (typeof req.body.stuNum === "undefined" || typeof req.body.prize === "undefined") {

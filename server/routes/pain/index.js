@@ -1,6 +1,27 @@
 let router = require('express').Router();
 let util = require('../util');
 
+router.route('/pain').get(function (req, res) {
+    let db = req.app.get('db');
+    db.query("SELECT * FROM reasonOfPain", function (err, rows) {
+        if (err) res.status(500).end();
+        let promise = new Promise(function (resolve, reject) {
+            let response = [];
+            for (var i = 0; i < rows.length; i++) {
+                let item = {
+                    "index": rows[i].index,
+                    "title": rows[i].title,
+                    "pain": rows[i].pain
+                }
+                response.push(item);
+            }
+            resolve(response);
+        }).then((response) => {
+            res.status(200).json(response);
+        });
+    })
+});
+
 router.route('/pain').put(function (req, res) {
     if (typeof req.body.stuNum === "undefined" || typeof req.body.pain === "undefined") {
         res.status(400).end();
