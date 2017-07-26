@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Chivalry.iml" filepath="$PROJECT_DIR$/Chivalry.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/floatingbuttonlibrary/floatingbuttonlibrary.iml" filepath="$PROJECT_DIR$/floatingbuttonlibrary/floatingbuttonlibrary.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/Chivalry.iml" filepath="$PROJECT_DIR$/Chivalry.iml"/>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml"/>
->>>>>>> 68c690daa5eb58376e1295bbff270b550f7c9d13
     </modules>
   </component>
 </project>
