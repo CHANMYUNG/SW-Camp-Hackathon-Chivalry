@@ -37,7 +37,7 @@ public class PrizePainActivity extends AppCompatActivity {
 
         int stuNumValue = User.getStuNum();
 
-        aq.ajax("http://13.124.15.202:8080/student/"+stuNumValue, String.class, new AjaxCallback<String>() {
+        aq.ajax("http://13.124.15.202:8081/student/"+stuNumValue, String.class, new AjaxCallback<String>() {
             @Override
             public void callback(String url, String response, AjaxStatus status) {
                 try {
