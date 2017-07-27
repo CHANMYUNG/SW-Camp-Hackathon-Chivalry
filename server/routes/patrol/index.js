@@ -2,7 +2,7 @@ let router = require('express').Router();
 
 router.route('/patrol').post(function (req, res) {
     let db = req.app.get('db');
-    db.query("UPDATE ROOM SET checked = false", function (err, result) {
+    db.query("UPDATE room SET checked = false", function (err, result) {
         if (err) {
             console.log(err);
             res.status(500).end();
@@ -16,13 +16,18 @@ router.route('/patrol').post(function (req, res) {
 router.route('/patrol/:roomNum').put(function (req, res) {
     if (typeof req.params.roomNum === "undefined") res.status(400).end();
     else {
-        db.query("UPDATE ROOM SET checked = true WHERE roomNum = ?", roomNum, function (err, result) {
+        let db = req.app.get('db');
+        let roomNum = req.params.roomNum;
+        db.query("UPDATE room SET checked = !checked WHERE roomNum = ?", roomNum, function (err, result) {
             if (err) {
                 console.log(err);
                 res.status(500).end();
             } else {
-                console.log(result.affectedRows);
-                res.status(200).end();
+                db.query("SELECT checked FROM room WHERE roomNum = ?", roomNum, function (err, result) {
+                    res.status(200).json({
+                        "after": result[0].checked
+                    });
+                });
             }
         });
     }
@@ -38,7 +43,7 @@ router.route('/patrol/:floor').get(function (req, res) {
     else {
         let db = req.app.get('db');
         let like = req.params.floor + "%";
-        db.query("SELECT roomNum, isAttention, checked FROM ROOM WHERE roomNum like ? ORDER BY roomNum", like,
+        db.query("SELECT roomNum, isAttention, checked FROM room WHERE roomNum like ? ORDER BY roomNum", like,
             function (err, rows) {
                 if (err) {
                     res.status(500).end();

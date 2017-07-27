@@ -34,8 +34,8 @@ router.route('/room').get(function (req, res) {
     let date = new Date();
     let now = util.getDateNow();
 
-    db.query("SELECT r.roomNum, r.isAttention, (select isNice from CLEANLINESS where date = ? and roomNum = r.roomNum) as isNice " +
-        "FROM ROOM as r LEFT JOIN CLEANLINESS as c ON r.roomNum = c.roomNum ORDER BY r.roomNum", now,
+    db.query("SELECT r.roomNum, r.isAttention, (select isNice from cleanliness where date = ? and roomNum = r.roomNum) as isNice " +
+        "FROM room as r LEFT JOIN cleanliness as c ON r.roomNum = c.roomNum ORDER BY r.roomNum", now,
         function (err, rows) {
             if (err) {
                 res.status(500).end();
@@ -102,7 +102,7 @@ router.route('/room/:roomNum').get(function (req, res) {
         let roomNum = req.params.roomNum;
         let db = req.app.get('db');
         let now = util.getDateNow();
-        db.query("SELECT s.name, s.prize, s.pain, s.stuNum, c.isNice  FROM STUDENT as s LEFT JOIN CLEANLINESS as c ON s.roomNum = c.roomNum WHERE s.roomNum = ? and c.date=? ORDER BY s.stuNum", [roomNum, now], function (err, rows) {
+        db.query("SELECT s.name, s.prize, s.pain, s.stuNum, c.isNice  FROM student as s LEFT JOIN cleanliness as c ON s.roomNum = c.roomNum WHERE s.roomNum = ? and c.date=? ORDER BY s.stuNum", [roomNum, now], function (err, rows) {
             if (err || rows.length == 0) res.status(400).end();
             else {
                 let promise = new Promise(function (resolve, reject) {
@@ -150,10 +150,11 @@ router.route('/room/floor/:floor').get(function (req, res) {
         let floor = req.params.floor;
         let like = floor + "%";
         console.log(like);
-        db.query("SELECT r.roomNum, r.isAttention, (select isNice from CLEANLINESS where date = ? and roomNum = r.roomNum) as isNice " +
-            "FROM ROOM as r LEFT JOIN CLEANLINESS as c ON r.roomNum = c.roomNum WHERE CAST(r.roomNum as CHAR) like ? ORDER BY r.roomNum", [now, like],
+        db.query("SELECT r.roomNum, r.isAttention, (select isNice from cleanliness where date = ? and roomNum = r.roomNum) as isNice " +
+            "FROM room as r LEFT JOIN cleanliness as c ON r.roomNum = c.roomNum WHERE CAST(r.roomNum as CHAR) like ? ORDER BY r.roomNum", [now, like],
             function (err, rows) {
                 if (err) {
+                    console.log(err);
                     res.status(500).end();
                 } else {
                     console.log(rows);

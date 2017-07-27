@@ -3,7 +3,7 @@ let router = require('express').Router();
 router.route('/student/:stuNum').get(function (req, res) {
     let db = req.app.get('db');
     let stuNum = req.params.stuNum;
-    db.query("SELECT * FROM STUDENT WHERE stuNum = ?", stuNum, function (err, result) {
+    db.query("SELECT * FROM student WHERE stuNum = ?", stuNum, function (err, result) {
         if (err) res.status(500).end();
         else if (result.length === 1) {
             let response = {
