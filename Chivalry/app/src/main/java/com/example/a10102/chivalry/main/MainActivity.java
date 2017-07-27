@@ -1,8 +1,5 @@
 package com.example.a10102.chivalry.main;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -26,7 +23,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.example.a10102.chivalry.R;
-import com.example.a10102.chivalry.patrol.PatrolFragment;
+import com.example.a10102.chivalry.patrol.PatrolActivity;
 import com.example.a10102.chivalry.room.Room;
 import com.example.a10102.chivalry.room.RoomActivity;
 
@@ -148,9 +145,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, AlarmActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_patrol) {
-            Intent intent = new Intent(this, PatrolFragment.class);
+            Intent intent = new Intent(this, PatrolActivity.class);
             startActivity(intent);
-//            Intent intent = new Intent(this, PatrolFragment.class);
+//            Intent intent = new Intent(this, PatrolActivity.class);
 //            startActivity(intent);
         }
 
