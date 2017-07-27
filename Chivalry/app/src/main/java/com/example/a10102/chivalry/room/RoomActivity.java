@@ -36,10 +36,11 @@ public class RoomActivity extends AppCompatActivity {
 
         aq = new AQuery(this);
 
-        aq.ajax("http://13.124.15.202:8080/room/" + roomNum, String.class, new AjaxCallback<String>() {
+        aq.ajax("http://13.124.15.202:8081/room/" + roomNum, String.class, new AjaxCallback<String>() {
             @Override
             public void callback(String url, String response, AjaxStatus status) {
                 try {
+                    System.out.println(url);
                     JSONObject resultObject = new JSONObject(response);
                     String roomNum = resultObject.getString("roomNum") + "호";
                     boolean isNice = resultObject.getBoolean("isNice");

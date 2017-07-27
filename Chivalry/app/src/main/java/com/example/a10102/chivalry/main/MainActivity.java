@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
 
         aq = new AQuery(this);
         int floor = Floor.getFloor();
-        aq.ajax("http://13.124.15.202:8080/room/floor/" + floor, String.class, new AjaxCallback<String>() {
+        aq.ajax("http://13.124.15.202:8081/room/floor/" + floor, String.class, new AjaxCallback<String>() {
             @Override
             public void callback(String url, String response, AjaxStatus status) {
                 try {
