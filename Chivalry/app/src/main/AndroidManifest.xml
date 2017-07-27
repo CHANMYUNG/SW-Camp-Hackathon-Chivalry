@@ -23,7 +23,8 @@
         <activity android:name=".main.AlarmActivity"></activity>
 
         <activity android:name=".prize_pain.PrizePainActivity"></activity>
-        <activity android:name=".patrol.PatrolFragment"></activity>
+        <activity android:name=".patrol.PatrolActivity"></activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
