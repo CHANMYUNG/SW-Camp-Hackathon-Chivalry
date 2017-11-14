@@ -11,17 +11,17 @@ app.set('port', 8080);
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({
-    extended : false
+    extended: false
 }));
 
 app.use(sessionParser({
-    key: 'sessionKey',
-    secret: 'oi1uojooisd!@#*(@!#&(',
+    key: process.env.CHIVALRY_SESSION_KEY,
+    secret: process.env.CHIVALRY_SECRET,
     resave: false
 }));
 
 app.use(bodyParser.json());
-app.use('/',router);
+app.use('/', router);
 app.listen(app.get('port'), function () {
     console.log("Started :: " + app.get('port'));
     database.connect(app);
